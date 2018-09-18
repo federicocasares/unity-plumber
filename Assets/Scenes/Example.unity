@@ -190,6 +190,59 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 10, y: 55, z: 0}
+--- !u!1 &381031517
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 381031519}
+  - component: {fileID: 381031518}
+  m_Layer: 0
+  m_Name: SamplePipe4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &381031518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 381031517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 173e16e941149d143881c6b515015836, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  points:
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 5}
+  - {x: -3, y: 5, z: 5}
+  pipeRadius: 0.7
+  elbowRadius: 1.5
+  pipeSegments: 13
+  elbowSegments: 4
+  pipeMaterial: {fileID: 2100000, guid: 017b37ee0723e1e449ddfee308ea9d58, type: 2}
+  flatShading: 1
+  avoidStrangling: 0
+  generateEndCaps: 1
+  generateOnStart: 1
+--- !u!4 &381031519
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 381031517}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5, y: -2, z: 8}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &657529411
 GameObject:
   m_ObjectHideFlags: 0
@@ -238,6 +291,7 @@ MonoBehaviour:
   pipeMaterial: {fileID: 2100000, guid: 017b37ee0723e1e449ddfee308ea9d58, type: 2}
   flatShading: 0
   avoidStrangling: 1
+  generateEndCaps: 0
   generateOnStart: 1
 --- !u!4 &657529413
 Transform:
@@ -301,6 +355,7 @@ MonoBehaviour:
   pipeMaterial: {fileID: 2100000, guid: 2bfc4f99913af0f49983b96c399294fb, type: 2}
   flatShading: 0
   avoidStrangling: 1
+  generateEndCaps: 0
   generateOnStart: 0
 --- !u!4 &738640172
 Transform:
@@ -313,7 +368,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1177280710
 GameObject:
@@ -354,6 +409,7 @@ MonoBehaviour:
   pipeMaterial: {fileID: 2100000, guid: 3a2aff380c3cb7c4993dfc549f8dc7c9, type: 2}
   flatShading: 1
   avoidStrangling: 1
+  generateEndCaps: 0
   generateOnStart: 1
 --- !u!4 &1177280712
 Transform:
@@ -409,6 +465,7 @@ MonoBehaviour:
   pipeMaterial: {fileID: 2100000, guid: 5a39d4e4c1b1d484d93be45b0ff880a4, type: 2}
   flatShading: 0
   avoidStrangling: 1
+  generateEndCaps: 0
   generateOnStart: 1
 --- !u!4 &1496948261
 Transform:

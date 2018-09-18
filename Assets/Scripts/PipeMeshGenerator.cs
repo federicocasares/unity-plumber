@@ -15,6 +15,7 @@ public class PipeMeshGenerator : MonoBehaviour {
 	public Material pipeMaterial;
 	public bool flatShading;
 	public bool avoidStrangling;
+	public bool generateEndCaps;
 	public bool generateOnStart;
 
 	void Start() {
@@ -24,6 +25,9 @@ public class PipeMeshGenerator : MonoBehaviour {
 	}
 
 	public void RenderPipe() {
+		if (points.Count < 2) {
+			throw new System.Exception("Cannot render a pipe with fewer than 2 points");
+		}
 		// add mesh filter if not present
 		MeshFilter currentMeshFilter = GetComponent<MeshFilter>();
 		MeshFilter mf = currentMeshFilter != null ? currentMeshFilter : gameObject.AddComponent<MeshFilter>();
@@ -78,6 +82,10 @@ public class PipeMeshGenerator : MonoBehaviour {
 			Vector3 point2 = points[i + 1]; // the point around which the elbow will be built
 			Vector3 point3 = points[i + 2]; // next point
 			GenerateElbow(i, vertices, normals, triangles, point1, point2, point3);
+		}
+
+		if (generateEndCaps) {
+			GenerateEndCaps(vertices, triangles, normals);
 		}
 
 		m.SetVertices(vertices);
@@ -281,6 +289,30 @@ public class PipeMeshGenerator : MonoBehaviour {
 			if (i > 0) {
 				MakeElbowTriangles(vertices, triangles, i, index);
 			}
+		}
+	}
+
+	void GenerateEndCaps(List<Vector3> vertices, List<int> triangles, List<Vector3> normals) {
+		// create the circular cap on each end of the pipe
+		int firstCircleOffset = 0;
+		int secondCircleOffset = (points.Count - 1) * pipeSegments * 2 - pipeSegments;
+
+		vertices.Add(points[0]); // center of first segment cap
+		int firstCircleCenter = vertices.Count - 1;
+		normals.Add(points[0] - points[1]);
+
+		vertices.Add(points[points.Count - 1]); // center of end segment cap
+		int secondCircleCenter = vertices.Count - 1;
+		normals.Add(points[points.Count - 1] - points[points.Count - 2]);
+
+		for (int i = 0; i < pipeSegments; i++) {
+			triangles.Add(firstCircleCenter);
+			triangles.Add(firstCircleOffset + (i + 1) % pipeSegments);
+			triangles.Add(firstCircleOffset + i);
+
+			triangles.Add(secondCircleOffset + i);
+			triangles.Add(secondCircleOffset + (i + 1) % pipeSegments);
+			triangles.Add(secondCircleCenter);
 		}
 	}
 }

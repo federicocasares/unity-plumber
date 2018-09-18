@@ -20,6 +20,7 @@ Almost all of the settings are pretty much self explanatory, but here are the de
 * pipeMaterial: An Unity Material that will be applied to the MeshRenderer component in order to render the mesh.
 * flatShading: Enabling this option will disable smoothing and make a flat-shaded low-poly style pipe. Enabling this will increase vertex count greatly!
 * avoidStrangling: Enabling this option will cause the algorithm to try to avoid twists in elbows. This usually fixes some problems and causes new ones, so experiment to see what works best in your particular case.
+* generateEndCaps: Enabling this option will automatically generate circular end caps on each end of the pipe.
 * generateOnStart: Enabling this option will make the component generate the mesh automatically when started. Disable it if you need to set the points manually in runtime first and generate the mesh later.
 
 ## Public Methods
