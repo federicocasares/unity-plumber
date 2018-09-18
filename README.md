@@ -4,10 +4,10 @@
 ![Screenshot](https://raw.githubusercontent.com/federicocasares/unity-plumber/master/Preview.png)
 
 ## Important Information
-This repository contains an example project. These are distributed here only as part of the example scene to demonstrate the capabilities of UnityPlumber. If you are not interested in that and only want the component itself to test it out in your own project, feel free to proceed to copy only the PipeMeshGenerator.cs file to the Scripts directory and nothing else.
+This repository contains an example project. These files are distributed here only as part of the example scene to demonstrate the capabilities of UnityPlumber. If you are not interested in that and only want the component itself to test it out in your own project, feel free to proceed to copy only the PipeMeshGenerator.cs file and the Math3D.cs file to the Scripts directory and nothing else.
 
 ## Installation
-Getting UnityPlumber running is pretty easy. You simply need to get a copy of the PipeMeshGenerator.cs file in the Scripts directory and copy it to your project. Once there, simply add the PipeMeshGenerator component to an empty GameObject, set the options and you are good to go!
+Getting UnityPlumber running is pretty easy. You simply need to get a copy of the PipeMeshGenerator.cs and Math3D.cs files in the Scripts directory and copy them to your project. Once there, simply add the PipeMeshGenerator component to an empty GameObject, set the options and you are good to go!
 
 ## What do the options mean?
 Almost all of the settings are pretty much self explanatory, but here are the details:
