@@ -1,6 +1,8 @@
 # UnityPlumber
 (a component to procedurally generate pipe-like meshes in Unity)
 
+![Screenshot](https://raw.githubusercontent.com/federicocasares/unity-plumber/master/Preview.png)
+
 ## Important Information
 This repository contains an example project. These are distributed here only as part of the example scene to demonstrate the capabilities of UnityPlumber. If you are not interested in that and only want the component itself to test it out in your own project, feel free to proceed to copy only the PipeMeshGenerator.cs file to the Scripts directory and nothing else.
 
