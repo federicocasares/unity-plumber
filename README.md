@@ -21,7 +21,10 @@ Almost all of the settings are pretty much self explanatory, but here are the de
 * flatShading: Enabling this option will disable smoothing and make a flat-shaded low-poly style pipe. Enabling this will increase vertex count greatly!
 * avoidStrangling: Enabling this option will cause the algorithm to try to avoid twists in elbows. This usually fixes some problems and causes new ones, so experiment to see what works best in your particular case.
 * generateEndCaps: Enabling this option will automatically generate circular end caps on each end of the pipe.
+* generateElbows: Enabling this option will make pipe segments be connected by toroidal arc elbows. If the option is off, only the straight segments of the tubes will be generated.
 * generateOnStart: Enabling this option will make the component generate the mesh automatically when started. Disable it if you need to set the points manually in runtime first and generate the mesh later.
+* makeDoubleSided: Duplicates all faces with inverted normals so your pipes will be visible not only from the outside but also from the inside. What matters is what's on the inside, after all.
+* colinearThreshold: The algorithm will automatically remove any colinear points in your points list in order to improve performance and avoid ending up generating elbows that would require an infinite radius. Change this value to determine how sensitive the removal of those almost-colinear points should be. The higher the value, the higher the number of points that will end up being removed.
 
 ## Public Methods
 
